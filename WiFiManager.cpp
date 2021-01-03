@@ -260,6 +260,10 @@ boolean WiFiManager::autoConnect() {
   return autoConnect(ssid.c_str(), NULL);
 }
 
+boolean WiFiManager::autoConnect(boolean is_initialized, char const *apName, char const *apPassword) {
+  is_initialized ? _enableConfigPortal=false : _enableConfigPortal=true;
+  return autoConnect(apName, apPassword)
+}
 /**
  * [autoConnect description]
  * @access public
